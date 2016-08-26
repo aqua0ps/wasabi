@@ -1,12 +1,12 @@
 <!--
     Copyright 2016 Intuit
-   
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-   
+
         http://www.apache.org/licenses/LICENSE-2.0
-   
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,6 +32,11 @@
         <eventlog.class.name>com.intuit.wasabi.eventlog.impl.EventLogImpl</eventlog.class.name>
         <eventlog.threadpoolsize.core>2</eventlog.threadpoolsize.core>
         <eventlog.threadpoolsize.max>4</eventlog.threadpoolsize.max>
+        <eventlog.systemuser.username>SYSTEM_USER</eventlog.systemuser.username>
+        <eventlog.systemuser.firstname>System</eventlog.systemuser.firstname>
+        <eventlog.systemuser.lastname>User</eventlog.systemuser.lastname>
+        <eventlog.systemuser.email>admin@example.com</eventlog.systemuser.email>
+        <eventlog.systemuser.userid>SystemUser</eventlog.systemuser.userid>
     </properties>
 
     <dependencies>

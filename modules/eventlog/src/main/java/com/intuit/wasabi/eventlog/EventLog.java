@@ -15,10 +15,13 @@
  *******************************************************************************/
 package com.intuit.wasabi.eventlog;
 
+import com.google.inject.Inject;
 import com.intuit.wasabi.authenticationobjects.UserInfo;
 import com.intuit.wasabi.eventlog.events.EventLogEvent;
+import com.sun.javafx.runtime.SystemProperties;
 
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Provides an event log to register {@link EventLogListener}s and post events.
@@ -27,11 +30,11 @@ public interface EventLog extends Runnable {
     /**
      * Denotes the system user, used for automated events.
      */
-    UserInfo SYSTEM_USER = new UserInfo.Builder(UserInfo.Username.valueOf("SYSTEM_USER"))
-                                                .withFirstName("System")
-                                                .withLastName("User")
-                                                .withEmail("admin@example.com")
-                                                .withUserId("SystemUser")
+    UserInfo SYSTEM_USER = new UserInfo.Builder(UserInfo.Username.valueOf(SystemProperties.getProperty("eventlog.systemuser.username")))
+                                                .withFirstName(SystemProperties.getProperty("eventlog.systemuser.firstname"))
+                                                .withLastName(SystemProperties.getProperty("eventlog.systemuser.lastname"))
+                                                .withEmail(SystemProperties.getProperty("eventlog.systemuser.email"))
+                                                .withUserId(SystemProperties.getProperty("eventlog.systemuser.userid"))
                                                 .build();
 
     /**
