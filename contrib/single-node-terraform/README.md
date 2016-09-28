@@ -99,3 +99,17 @@ To destroy the instance and clean up, just run
 
 ## You have no rpms?
 Run `./bin/wasabi.sh package` from the wasabi root directory!
+
+## Not able to login to UI ?
+
+login to ec2 instance
+    ssh -i $HOME/.ssh/wasabi-key ec2-user@$INSTANCE_IP_ADDRESS
+    cd /usr/local/wasabi-main-<xxxxxxx>/content/ui/dist/scripts
+
+In config.js file here replace,
+
+http://localhost:8080/api/v1
+
+with 
+
+http://<PUBLIC-IP>:8080/api/v1
